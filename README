@@ -1,0 +1,15 @@
+CapDEM (Author: Yixiang Gan, version FEB-2013)
+
+Contact:
+Yixiang Gan
+Address:
+Particles and Grains Laboratory, School of Civil Engineering
+The University of Sydney, NSW 2006, Australia
+Email: yixiang.gan@sydney.edu.au
+
+A Discrete Element Method considering water movement between grains through capillary interaction and water movement. This version is developed for capturing the water retention curves in unsaturated media. 
+
+Details can be found in the ./Docs directory, and the following paper:
+Yixiang Gan, Federico Maggi and Itai Einav (2013).
+
+Using modified version of voro++

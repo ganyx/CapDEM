@@ -1,0 +1,10 @@
+./Compile
+qsub -cwd -q all.q@computenode01 g1e-5_s01-09
+qsub -cwd -q all.q@computenode01 g1e-5_s02-08
+qsub -cwd -q all.q@computenode01 g1e-5_s04-06
+qsub -cwd -q all.q@computenode01 g1e-3_s01-09
+qsub -cwd -q all.q@computenode01 g1e-3_s02-08
+qsub -cwd -q all.q@computenode01 g1e-3_s04-06
+qsub -cwd -q all.q@computenode01 g1e-8_s01-09
+qsub -cwd -q all.q@computenode01 g1e-8_s02-08
+qsub -cwd -q all.q@computenode01 g1e-8_s04-06
