@@ -10,6 +10,11 @@ Email: yixiang.gan@sydney.edu.au
 A Discrete Element Method considering water movement between grains through capillary interaction and water movement. This version is developed for capturing the water retention curves in unsaturated media. 
 
 Details can be found in the ./Docs directory, and the following paper:
-Yixiang Gan, Federico Maggi and Itai Einav (2013).
+Yixiang Gan, Federico Maggi and Itai Einav (2013): Water retention in discrete element method. Particles and Grains 2013.
 
-Using modified version of voro++
+Compiling using ../scripts/Compile
+Scripts are listed in ../scripts/ for typical inputs
+
+Other codes used in this code:
+-- modified version of Soft Dyanmics
+-- modified version of voro++
