@@ -9,6 +9,7 @@
 #include <time.h>
 
 #include <cstdlib>
+#include <algorithm>
 
 #include <sys/resource.h>
 
