@@ -83,6 +83,7 @@ class Ccontact
 	double dot_water_volume;
 	double dwater_volume;
 	double fcap; // the magnitude of capillary force
+	double fwater; // liquid force coming from air pressure.
 	double CONTACT_ANGLE;
 };
  

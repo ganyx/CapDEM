@@ -369,6 +369,7 @@ void Ccontact::set_me_in_main_cell()
 	file<<c.fn<<"\t";
 	file<<c.age<<"\t";
 	file<<c.fcap<<"\t";
+	file<<c.fwater<<"\t";
 	file<<c.dot_water_volume<<"\t";
 	
 // test output

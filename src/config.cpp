@@ -230,6 +230,7 @@ void Cconfig::sum_force()
 // Additional force due to positive water pressure, CHECK !!
 		Cvector FWATER_A = C[ic].nA * (P[C[ic].B].positive_pressure)*C[ic].voronoi_area;
 		Cvector FWATER_B = C[ic].nA * (P[C[ic].A].positive_pressure)*C[ic].voronoi_area;
+		C[ic].fwater = (P[C[ic].A].positive_pressure + P[C[ic].B].positive_pressure)*C[ic].voronoi_area/2.0;
 		P[C[ic].A].Fsum += FWATER_A;
 		P[C[ic].B].Fsum -= FWATER_B;
 		
