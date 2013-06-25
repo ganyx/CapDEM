@@ -162,6 +162,7 @@ ofstream & operator<<(ofstream &file,Cparticle p)
 	file<<p.X<<p.V<<p.Ome; //vector
 	file<<p.R<<"\t"<<p.m<<"\t"<<p.water_pressure<<"\t"<<p.saturation<<"\t"<<p.water_volume;//scalar	
 //	file<<"\t"<<p.v_face_areas[0]<<"\t"<<p.v_face_areas[1]<<"\t"<<p.v_face_areas[2]<<"\t"<<p.num_neighbors;
+	file<<"\t"<<p.positive_pressure;
 	file<<endl;	//new line
  	return file;
 }

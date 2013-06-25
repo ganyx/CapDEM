@@ -74,7 +74,7 @@ void Cconfig::iterate(double time_step)
 			P[ip].water_pressure += P[ip].positive_pressure*1.0; // air compression the whole cell experiencing the pressure
 			}
 		if(P[ip].saturation>=1.0e-10) P[ip].water_pressure /= P[ip].saturation;
-		}
+	}
 		
 	//Overall saturation and pressure
 	saturation = 0.0;
