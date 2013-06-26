@@ -48,6 +48,7 @@ bool Ccontact::AM_I_CONTACTING()
 	if(pA->AM_I_BOUNDARY== 1 && pB->AM_I_BOUNDARY== 1) return false;
 	if(pA->AM_I_BOUNDARY== 1 && pB->AM_I_BOUNDARY== 2) return false;
 	if(pA->AM_I_BOUNDARY== 2 && pB->AM_I_BOUNDARY== 1) return false;
+	if(pA == pB) return false;
 	set_me_in_main_cell(); //reset dX and dV according to the periodic boundary conditions	
 	dx=dX.NORM();
 	

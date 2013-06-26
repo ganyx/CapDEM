@@ -1,0 +1,11 @@
+rm -rf ./data/2500
+./SD_parallel<<!
+CREATE 
+./data/2500 1
+SIZE_CELL 10 100 5
+PERIODIC_SHEAR
+UNIFORM
+DMIN 0.95
+DMAX 1.05
+NPART_FLOW 5000
+!

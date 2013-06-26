@@ -17,13 +17,13 @@ Cmesh::Cmesh(Cvector L, double step_target, Ccell cell)
 //	if(N[0]<3 || N[1]<4 || N[2]<3  ) //check if there is enough box
 //		STOP("mesh.cpp","get_neigbour(QList <Cparticle> P, Ccell cell)"," There is not enough boxes in some direction (N<4)");	
 		
-//	twoDarray plan;
-//	oneDarray line; 
-//	Cbox box_single;	
+	twoDarray plan;
+	oneDarray line; 
+	Cbox box_single;	
 	
-//	for(int z=0;z<N[2];z++) line.push_back(box_single);	
-//	for(int y=0;y<N[1];y++) plan.push_back(line);
-//	for(int x=0;x<N[0];x++) box.push_back(plan);	//the order of these three lines ensures access to a box with x y z indexes by box[x][y][z] 	
+	for(int z=0;z<N[2];z++) line.push_back(box_single);	
+	for(int y=0;y<N[1];y++) plan.push_back(line);
+	for(int x=0;x<N[0];x++) box.push_back(plan);	//the order of these three lines ensures access to a box with x y z indexes by box[x][y][z] 	
 	
 	// SEG FAULT: destructor of box[][][]?
 	for(int z=0;z<N[2];z++)	for(int y=0;y<N[1];y++)	for(int x=0;x<N[0];x++){

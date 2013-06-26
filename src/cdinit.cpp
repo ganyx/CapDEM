@@ -232,7 +232,6 @@ void Cconfig::set_random_grain(int Nf, int Nb, int Nt)
 			
 			for(int i=0;i<DIM;i++) P[P.size()-1].X.x[i]=UNIFORM_RANDOM_DOUBLE(-cell.L.x[i]/2.,cell.L.x[i]/2.);	
 			if(PSEUDO_2D) P[P.size()-1].X.x[2]=0.; // if we are in 2D, this component of position is zero
-
 			P[P.size()-1].set_in_box(mesh,cell);
 			P[P.size()-1].get_neighbour(cell);
 
@@ -245,11 +244,11 @@ void Cconfig::set_random_grain(int Nf, int Nb, int Nt)
 					position_occupied=true; 
 					break;
 					}
-				}
-				
+		}	
 			}while(position_occupied);
 		
-		if(p%200==0) cout<<"Number of particles set: "<<p<<endl;//write on screen every when 200 more grains found there place 
+		if(p%100==0) 
+			cout<<"Number of particles set: "<<p<<endl;//write on screen every when 200 more grains found there place 
 	}
 
 double frac_sol = 0;

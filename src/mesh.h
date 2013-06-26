@@ -22,8 +22,8 @@ class Cmesh
 {
 public:
 	Cvector step;  							/**<Size of each box*/
-//	threeDarray box; 						/**<3D array of box*/ 
-	class Cbox box[100][100][30];
+	threeDarray box; 						/**<3D array of box*/ 
+//	class Cbox box[100][100][30];
 	int N[DIM];								/**<number of box in each direction, for convinience only*/
 	Cmesh(Cvector, double, Ccell);
 //	void get_neigbour(Ccell&);
