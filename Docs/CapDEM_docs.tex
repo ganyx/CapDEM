@@ -1,0 +1,181 @@
+\documentclass[11pt, a4paper]{report}
+\usepackage[authoryear]{natbib}
+\bibliographystyle{plainnat}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[hang] 
+{\normalfont\LARGE\bfseries\centering}{\chaptertitlename\ \thechapter:}{0.75em}{} 
+\titlespacing*{\chapter}{0pt}{0pt}{10pt}
+
+% page counting, header/footer
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\usepackage{wrapfig}
+
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{ulem}
+
+% PAGE MARGINS
+\setlength{\topmargin}{-1cm} \setlength{\headsep}{1cm}
+\setlength{\textwidth}{16cm} \setlength{\textheight}{24.5cm}
+\setlength{\oddsidemargin}{0cm} \setlength{\evensidemargin}{0cm}
+\setlength{\footskip}{1cm}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{ % settings for include code as lstlisting environment
+language=C,
+frame=tb,
+columns=fullflexible,
+showstringspaces=false
+stepnumber=1
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+% To Do List
+\newcommand{\todo}{ \item[\color{red}$\bigcirc$] }
+\newcommand{\done}{\item[\color{blue}\sout{$\bigcirc$}] }
+
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\graphicspath{{Figures/}}
+
+\setcounter{tocdepth}{0} 
+\setlength{\parskip}{5pt} % 1ex plus 0.5ex minus 0.2ex}
+\setlength{\parindent}{0pt}
+\pagestyle{plain}
+
+%\renewcommand{\chaptername}{Note}
+
+\newcommand{\homog}[1]{\langle #1 \rangle}
+\newcommand{\eq}[1]{Eq.\ (#1)}
+\newcommand{\file}[1]{\fcolorbox{red}{white}{#1}}
+\newcommand{\back}{\hyperlink{contents}{\color{gray} Table of Contents}}
+
+\pagestyle{fancy}
+%\lhead{\chaptertitle}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\rhead{\footnotesize \back }
+\rfoot{\footnotesize Version: \today }
+
+% ------------------- Title and Author -----------------------------
+\title{Research Notes}
+\author{Yixiang Gan}
+\date{Since 2013-02-27}
+\begin{document}
+%\maketitle
+%\tableofcontents
+
+\chapter{Overview}
+\section{Basic input information}
+
+Specific the type of simulation in the script by a set of keywords.
+
+\begin{itemize}\itemsep -2pt
+ \item CREATE: random generation of grains in the simulation cell with given grain size distribution, e.g.\ FRACTAL, UNIFORM, VOLUME. It will produce a very loose sample.
+ \item EVOLVE: this can include procedures as pre-compaction, pre-shearing, and actual simulation processes.
+\end{itemize}
+
+Input and export directories.
+
+Boundary conditions
+
+Simulation types
+\begin{itemize} \itemsep -2pt
+ \item CONDUCTION
+ \item PRODUCTION
+ \item EXPANSION
+\end{itemize}
+
+Mechanical properties
+\begin{itemize}\itemsep -2pt
+ \item MODULE\_N
+ \item FRICTION 
+ \item TANG\_CONSTANT
+ \item ROLL\_CONSTANT
+\end{itemize}
+
+Thermal properties
+\begin{itemize}\itemsep -2pt
+ \item CONDUCTIVITY	
+ \item SPECIFIC\_HEAT
+ \item THER\_EXPANSION
+\end{itemize}
+
+Liquid phase properties
+\begin{itemize}\itemsep -2pt
+ \item GRAVITY
+ \item MAX\_SCAN
+ \item MIN\_SCAN
+ \item SURFACE\_TENSION
+\end{itemize}
+
+Simulation time and output control
+\begin{itemize}\itemsep -2pt
+ \item T\_INIT
+ \item T\_END
+ \item SAVE\_BEGIN
+ \item SAVE\_PERIOD 
+\end{itemize}
+
+\begin{lstlisting}[caption="Typical script for input parameters."]
+./SD_parallel<<!
+EVOLVE 
+./data/prepack-p001	51	
+./data/g1e-3_s0109  1
+PERIODIC_SHEAR
+CONDUCTION	NO
+PRODUCTION	NO
+EXPANSION	NO
+NORMAL_STRESS 	0.001
+SHEAR_RATE	0.0
+MODULE_N 	1000
+FRICTION 	0.5
+TANG_CONSTANT 	1
+ROLL_CONSTANT 	1
+CONDUCTIVITY	1
+SPECIFIC_HEAT	100
+THER_EXPANSION  0.000001
+COMP_FRACTION	1.0
+WETTING
+GRAVITY         0.001
+MAX_SCAN	0.9
+MIN_SCAN	0.1
+SURFACE_TENSION 0.01
+T_INIT		0
+T_END		4000
+SAVE_BEGIN	0
+SAVE_PERIOD     10	
+NO_MORE_TASK
+!
+\end{lstlisting}
+
+%\bibliography{library}
+\bibliography{/Users/yixiang/Dropbox/References/@Index/MendeleyLibMac/library}
+\end{document}
+\end
